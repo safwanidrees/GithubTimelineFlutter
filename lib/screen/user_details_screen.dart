@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:github_flutter/providers/user_provider.dart';
+import 'package:github_flutter/screen/repo_screen.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
@@ -217,23 +218,29 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
 
                         child: Padding(
                           padding: const EdgeInsets.all(13.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              Row(
-                                children: <Widget>[
-                                  Image.asset(
-                                      'assets/images/user-male-circle.png'),
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 8.0),
-                                    child: Text('Public Repositries',
-                                        style: textStyle),
-                                  ),
-                                ],
-                              ),
-                              Text(user.user.public_repo.toString(),
-                                  style: textStyle),
-                            ],
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (ctx) => RepositiriesScreen(user.user.username)));
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Row(
+                                  children: <Widget>[
+                                    Image.asset(
+                                        'assets/images/user-male-circle.png'),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 8.0),
+                                      child: Text('Public Repositries',
+                                          style: textStyle),
+                                    ),
+                                  ],
+                                ),
+                                Text(user.user.public_repo.toString(),
+                                    style: textStyle),
+                              ],
+                            ),
                           ),
                         ),
                       ),
