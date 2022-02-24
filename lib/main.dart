@@ -1,29 +1,52 @@
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-import 'package:github_flutter/providers/repo_provider.dart';
-import 'package:github_flutter/providers/user_provider.dart';
-import 'package:github_flutter/screen/home_screen.dart';
+import 'package:github_flutter/routes/application.dart';
+import 'package:github_flutter/routes/routes.dart';
+import 'package:github_flutter/utils/theme.dart';
 import 'package:provider/provider.dart';
 
+import 'core/bloc/github_bloc/github_bloc.dart';
+import 'core/bloc/theme_bloc/theme_bloc.dart';
+
 void main() {
-  runApp(MyApp());
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(create: (ctx) => GithubBloc()),
+    ChangeNotifierProvider(create: (ctx) => ThemeBloc())
+  ], child: const MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   // This widget is the root of your application.
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  _MyAppState() {
+    final router = FluroRouter();
+    Routes.configureRoutes(router);
+    Application.router = router;
+  }
+
+  @override
+  void initState() {
+    context.read<ThemeBloc>().getCurrentAppTheme();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider.value(value: UserProvider()),
-        ChangeNotifierProvider.value(value: RepositriesProvider()),
-      ],
-      child: MaterialApp(
+    return Consumer<ThemeBloc>(
+      builder: (context, value, child) => MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-        ),
-        home: HomeScreen(),
+        theme: AppTheme.themeData(value.darkTheme, context),
+        // initialRoute: Routes.home,
+        // routes: AppRoute.pages,
+        onGenerateRoute: Application.router.generator,
+        //  HomeScreen(),
       ),
     );
   }
