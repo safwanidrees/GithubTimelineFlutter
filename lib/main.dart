@@ -1,5 +1,6 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:github_flutter/routes/application.dart';
 import 'package:github_flutter/routes/routes.dart';
 import 'package:github_flutter/utils/theme.dart';
@@ -8,7 +9,8 @@ import 'package:provider/provider.dart';
 import 'core/bloc/github_bloc/github_bloc.dart';
 import 'core/bloc/theme_bloc/theme_bloc.dart';
 
-void main() {
+void main() async {
+  await dotenv.load();
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (ctx) => GithubBloc()),
     ChangeNotifierProvider(create: (ctx) => ThemeBloc())

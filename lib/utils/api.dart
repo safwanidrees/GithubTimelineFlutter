@@ -1,4 +1,6 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 class Api {
   static const api = 'https://api.github.com';
-  static const token = 'Your Github Token';
+  static var token = dotenv.get('GITHUB_TOKEN');
 }

@@ -4,10 +4,10 @@ Github Timeline Flutter is a simple mobile and web app that is developed using f
 
 ## Demo App
 
-[Download Mobile App](https://drive.google.com/file/d/1iytYufju1GX8J8C8uMK5ttMZKxFMkDG-/view?usp=sharing)
-
+[Download Mobile App](https://drive.google.com/file/d/1i0j9zCrKI_trt8uHnmdQI4NmiCxPaQ38/view?usp=sharing)
 
 ## Screen Shots
+
 <div >
   <img src="https://user-images.githubusercontent.com/38593104/155702348-ab574ac9-6384-41af-98c4-aaadbbf56ba4.png" alt="alt text" width="245">
   <img src="https://user-images.githubusercontent.com/38593104/155701698-0e20e496-4193-42d4-a56a-4be90efe1660.png" alt="alt text" width="245">
@@ -19,11 +19,12 @@ Github Timeline Flutter is a simple mobile and web app that is developed using f
   <img src="https://user-images.githubusercontent.com/38593104/155703036-0084081c-9fef-438b-9d76-d9dfcbef4a1e.png" alt="alt text" width="1440" >
 </div>
 
-
 ## Preview
+
 https://user-images.githubusercontent.com/38593104/155677712-82ced27c-7515-4669-b338-95927c5fd68d.mp4
 
 ## Contributing
+
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
