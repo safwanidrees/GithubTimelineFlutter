@@ -9,15 +9,16 @@ Github Timeline Flutter is a simple mobile and web app that is developed using f
 
 ## Screen Shots
 <div >
-  <img src="https://drive.google.com/uc?export=view&id=1Kbif5qhbddl4ukeXdz6QVur_lSPoMk3U" alt="alt text" width="245">
-  <img src="https://drive.google.com/uc?export=view&id=1HJ6LYOxUO6k1ljIiQ4mXyNHI0qT-AkgH" alt="alt text" width="245">
-  <img src="https://drive.google.com/uc?export=view&id=1hOgb0VwTZ9sw0s9MpoQAeNKGEr2nPqpZ" alt="alt text" width="245">
-  <img src="https://drive.google.com/uc?export=view&id=1uGsLsqVeg_VAaJ39xnSOa3A6YyeEu8bz" alt="alt text" width="245">
-  <img src="https://drive.google.com/uc?export=view&id=1HxSRB1_BYZZ9HwDbhDP8Pbkp28TOQcsc" alt="alt text" width="245">
-  <img src="https://drive.google.com/uc?export=view&id=1vFnCK10UuLy-4WiEESGHOabFb54DVxY_" alt="alt text" width="245">
-  <img src="https://drive.google.com/uc?export=view&id=1D2VuACmBBOjV9igraJrHTi2_j2FbvdVs" alt="alt text" width="245">
-  <img src="https://drive.google.com/uc?export=view&id=18AUZWgyFbXrqmvmvsVd6mQIrVVPU4L_3" alt="alt text" >
+  <img src="https://user-images.githubusercontent.com/38593104/155702348-ab574ac9-6384-41af-98c4-aaadbbf56ba4.png" alt="alt text" width="245">
+  <img src="https://user-images.githubusercontent.com/38593104/155701698-0e20e496-4193-42d4-a56a-4be90efe1660.png" alt="alt text" width="245">
+  <img src="https://user-images.githubusercontent.com/38593104/155701758-47a22db9-8d3f-468e-95ef-01a3ac194602.png" alt="alt text" width="245">
+  <img src="https://user-images.githubusercontent.com/38593104/155702567-074d0036-646e-48dc-892a-6b372bba64e1.png" alt="alt text" width="245">
+  <img src="https://user-images.githubusercontent.com/38593104/155701801-c5f0c432-f8ca-450b-abef-191290ed50b6.png" alt="alt text" width="245">
+  <img src="https://user-images.githubusercontent.com/38593104/155701816-5fbd17b3-86a8-4f40-81df-c717013b980a.png" alt="alt text" width="245">
+  <img src="https://user-images.githubusercontent.com/38593104/155702833-367d3769-b9fc-4466-995c-43b85e26979a.png" alt="alt text" width="245">
+  <img src="https://user-images.githubusercontent.com/38593104/155703036-0084081c-9fef-438b-9d76-d9dfcbef4a1e.png" alt="alt text" width="1440" >
 </div>
+
 
 ## Preview
 https://user-images.githubusercontent.com/38593104/155677712-82ced27c-7515-4669-b338-95927c5fd68d.mp4
