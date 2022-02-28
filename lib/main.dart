@@ -19,8 +19,6 @@ void main() async {
 
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
   @override
   State<MyApp> createState() => _MyAppState();
 }
@@ -45,10 +43,7 @@ class _MyAppState extends State<MyApp> {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: AppTheme.themeData(value.darkTheme, context),
-        // initialRoute: Routes.home,
-        // routes: AppRoute.pages,
         onGenerateRoute: Application.router.generator,
-        //  HomeScreen(),
       ),
     );
   }

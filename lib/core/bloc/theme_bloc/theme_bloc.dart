@@ -3,7 +3,7 @@ import 'package:github_flutter/core/repository/theme_repo.dart';
 
 class ThemeBloc with ChangeNotifier {
   final _themeRepository = ThemeRepository();
-  bool _darkTheme = false;
+  bool _darkTheme = true;
 
   bool get darkTheme => _darkTheme;
 

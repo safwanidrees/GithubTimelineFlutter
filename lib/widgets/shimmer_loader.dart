@@ -250,10 +250,6 @@ class ShimmerCard extends StatelessWidget {
       radius: radius,
       baseColor: Theme.of(context).scaffoldBackgroundColor,
       highlightColor: AppTheme.shimmerColor,
-
-      // size: 60,
-      //   fadeTheme: isDarkMode ? FadeTheme.dark : FadeTheme.light,
-      // fadeTheme: FadeTheme.light,
       millisecondsDelay: 0,
     );
   }

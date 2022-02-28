@@ -79,7 +79,6 @@ class _ActionUserListScreenState extends State<ActionUserListScreen> {
                         imageUrl: githubBloc.usersList[i].imageUrl,
                       ),
                       title: Text(githubBloc.usersList[i].username.toString()),
-                      // subtitle: Text(githubBloc.usersList[i].bio.toString()),
                     ),
                 separatorBuilder: (context, i) => const Divider(),
                 itemCount: githubBloc.usersList.length);

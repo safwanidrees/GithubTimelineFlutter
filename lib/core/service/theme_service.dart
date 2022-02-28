@@ -8,6 +8,6 @@ class ThemeService {
 
   Future<bool> getTheme() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.getBool("theme") ?? false;
+    return prefs.getBool("theme") ?? true;
   }
 }

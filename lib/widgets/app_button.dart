@@ -44,7 +44,6 @@ class AppButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(borderRadius),
         ),
         child: ElevatedButton(
-          // key: key,
           style: ElevatedButton.styleFrom(
             primary: bgcolor ?? AppTheme.secondaryColor,
             elevation: 0,

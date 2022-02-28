@@ -90,9 +90,6 @@ class _CustomTextFiledState extends State<CustomTextFiled> {
                 const BoxConstraints(maxHeight: 23, minHeight: 23),
             isDense: widget.isDense,
             contentPadding: const EdgeInsets.all(10),
-
-            // contentPadding:
-            //     new EdgeInsets.symmetric(vertical: 0.0, horizontal: 10.0),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(widget.radius),
                 borderSide: BorderSide(color: widget.borderColor, width: 1)),

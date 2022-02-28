@@ -22,15 +22,6 @@ class RepoCard extends StatelessWidget {
         margin: const EdgeInsets.only(bottom: 10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          // color: Theme.of(context).scaffoldBackgroundColor,
-          // boxShadow: [
-          //   BoxShadow(
-          //     color: Colors.grey.withOpacity(0.05),
-          //     spreadRadius: 0.2,
-          //     blurRadius: 10,
-          //     offset: Offset(0, 1), // changes position of shadow
-          //   ),
-          // ],
           border: Border.all(color: AppTheme.grey),
         ),
         child: Padding(
@@ -44,8 +35,6 @@ class RepoCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                    // crossAxisAlignment: CrossAxisAlignment.start,
-                    // mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Expanded(
                         child: Text(
@@ -73,7 +62,7 @@ class RepoCard extends StatelessWidget {
                             onTap: () {
                               context
                                   .read<GithubBloc>()
-                                  .downloadRepository(repositry.url);
+                                  .downloadRepository(repositry.url, context);
                             },
                             child: const Padding(
                               padding: EdgeInsets.all(8.0),
@@ -85,9 +74,8 @@ class RepoCard extends StatelessWidget {
                               : InkWell(
                                   borderRadius: BorderRadius.circular(10),
                                   onTap: () {
-                                    context
-                                        .read<GithubBloc>()
-                                        .shareRepository(repositry.url);
+                                    context.read<GithubBloc>().shareRepository(
+                                        repositry.url, context);
                                   },
                                   child: const Padding(
                                     padding: EdgeInsets.all(8.0),

@@ -4,7 +4,7 @@ Github Timeline Flutter is a simple mobile and web app that is developed using f
 
 ## Demo App
 
-[Download Mobile App](https://drive.google.com/file/d/1i0j9zCrKI_trt8uHnmdQI4NmiCxPaQ38/view?usp=sharing)
+[Download Mobile App](https://drive.google.com/file/d/1ekwSDNGbNnRQu-d040P-v6d1tUQ8l_JS/view?usp=sharing)
 
 ## Screen Shots
 
@@ -21,7 +21,7 @@ Github Timeline Flutter is a simple mobile and web app that is developed using f
 
 ## Preview
 
-https://user-images.githubusercontent.com/38593104/155677712-82ced27c-7515-4669-b338-95927c5fd68d.mp4
+https://user-images.githubusercontent.com/38593104/155949945-4fbb7e1d-6b8a-4dd8-9d63-c44f196aacf6.mp4
 
 ## Contributing
 

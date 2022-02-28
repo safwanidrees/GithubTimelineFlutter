@@ -3,6 +3,7 @@ import 'dart:typed_data';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:github_flutter/core/networking/exception.dart';
 import 'package:github_flutter/core/repository/github_repository.dart';
@@ -10,6 +11,7 @@ import 'package:github_flutter/model/repositries.dart';
 import 'package:github_flutter/model/user.dart';
 import 'package:github_flutter/constants/enums.dart';
 import 'package:github_flutter/utils/alert_message.dart';
+import 'package:github_flutter/widgets/loader_dialog.dart';
 import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart';
 import 'package:share_extend/share_extend.dart';
@@ -160,14 +162,14 @@ class GithubBloc with ChangeNotifier {
   }
 
 //Downloading the repository
-  void downloadRepository(String? repourl) async {
+  void downloadRepository(String? repourl, BuildContext context) async {
     if (repourl != null) {
       String downloadUrl = "$repourl/archive/refs/heads/master.zip";
 
-      //  showDialog(
-      //   context: context,
-      //   barrierDismissible: false,
-      //   builder: (ctx) => LoaderDialog());
+      showDialog(
+          context: context,
+          builder: (context) => const LoaderDialog(),
+          barrierDismissible: false);
       if (!kIsWeb) {
         Directory? dir;
         if (Platform.isAndroid) {
@@ -186,7 +188,7 @@ class GithubBloc with ChangeNotifier {
 
         Uint8List bytes = file.readAsBytesSync();
         Uint8List data = Uint8List.fromList(bytes);
-
+        Navigator.pop(context);
         await FileSaverHelper.saveAndLaunchFile(data, fileName);
       } else {
         await FileSaverHelper.saveAndLaunchFile(Uint8List(1), downloadUrl);
@@ -201,12 +203,12 @@ class GithubBloc with ChangeNotifier {
     }
   }
 
-  void shareRepository(String? url) async {
+  void shareRepository(String? url, BuildContext context) async {
     if (url != null) {
-      //  showDialog(
-      //   context: context,
-      //   barrierDismissible: false,
-      //   builder: (ctx) => LoaderDialog());
+      showDialog(
+          context: context,
+          builder: (context) => const LoaderDialog(),
+          barrierDismissible: false);
       Directory? dir = Platform.isAndroid
           ? await getExternalStorageDirectory()
           : await getApplicationDocumentsDirectory();
@@ -216,11 +218,13 @@ class GithubBloc with ChangeNotifier {
         dir!.path,
         fileName,
       );
-      await _startDownload(savePath, url);
+      String downloadUrl = "$url/archive/refs/heads/master.zip";
+      await _startDownload(savePath, downloadUrl);
 
-      // Navigator.of(context, rootNavigator: true).pop();
-      ShareExtend.share(savePath, "Hey Thay is my Repo",
-          subject: "Hey Thay is my Repo");
+      File file = File(savePath);
+
+      Navigator.of(context).pop();
+      ShareExtend.share(file.path, "file", subject: "Hey Thay is my Repo");
     }
   }
 }

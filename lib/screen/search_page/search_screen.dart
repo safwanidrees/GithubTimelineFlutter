@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:github_flutter/core/bloc/theme_bloc/theme_bloc.dart';
 import 'package:github_flutter/routes/routes.dart';
+import 'package:github_flutter/utils/app_images.dart';
 import 'package:github_flutter/utils/responsive_size.dart';
 import 'package:github_flutter/utils/theme.dart';
 import 'package:github_flutter/widgets/app_button.dart';
@@ -43,7 +44,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Image.asset(
-                      'assets/images/github--v1.png',
+                      AppImages.github_logo,
                       color: Theme.of(context).cardColor,
                     ),
                     const SizedBox(
