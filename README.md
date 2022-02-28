@@ -1,6 +1,6 @@
 # Github Timeline Flutter
 
-Github Timeline Flutter is a simple mobile and web app that is developed using flutter in which you can see GitHub user details, repositories, followers, and followings. You can also download and share the repository from mobile and web
+Github Timeline Flutter is a Simple mobile and web app developed using flutter in which user can download and share user public repositories zip file with other and also user can see user details, repositories, followers, followings and repository forks/stars users.
 
 ## Demo App
 
