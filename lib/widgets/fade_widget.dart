@@ -5,8 +5,10 @@ class FadeWidget extends StatefulWidget {
   final int? duration;
   final String type;
   const FadeWidget(
-      {Key? key, required this.child, this.duration = 1000, this.type = "zoom"})
-      : super(key: key);
+      {super.key,
+      required this.child,
+      this.duration = 1000,
+      this.type = "zoom"});
 
   @override
   _FadeWidgetState createState() => _FadeWidgetState();

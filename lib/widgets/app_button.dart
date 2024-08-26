@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:github_flutter/utils/responsive_size.dart';
 import 'package:github_flutter/utils/theme.dart';
 
@@ -16,7 +15,7 @@ class AppButton extends StatelessWidget {
   final double borderRadius;
   final bool isCenter;
   const AppButton({
-    Key? key,
+    super.key,
     this.buttonText,
     this.callback,
     this.bgcolor,
@@ -28,7 +27,7 @@ class AppButton extends StatelessWidget {
     this.centerWidget,
     this.borderColor,
     this.isCenter = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +44,7 @@ class AppButton extends StatelessWidget {
         ),
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            primary: bgcolor ?? AppTheme.secondaryColor,
+            backgroundColor: bgcolor ?? AppTheme.secondaryColor,
             elevation: 0,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(borderRadius)),

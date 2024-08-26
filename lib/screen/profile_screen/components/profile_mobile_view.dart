@@ -3,7 +3,7 @@ import 'package:github_flutter/screen/profile_screen/components/profile_repo_vie
 import 'package:github_flutter/screen/profile_screen/components/profile_top_view.dart';
 
 class ProfileMobileView extends StatefulWidget {
-  const ProfileMobileView({Key? key}) : super(key: key);
+  const ProfileMobileView({super.key});
 
   @override
   State<ProfileMobileView> createState() => _ProfileMobileViewState();

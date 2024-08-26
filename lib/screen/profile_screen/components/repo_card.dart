@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:github_flutter/core/bloc/github_bloc/github_bloc.dart';
-
 import 'package:github_flutter/model/repositries.dart';
 import 'package:github_flutter/routes/routes.dart';
 import 'package:github_flutter/utils/app_date_utils.dart';
@@ -12,9 +11,9 @@ import 'package:provider/provider.dart';
 class RepoCard extends StatelessWidget {
   final Repositries repositry;
   const RepoCard({
-    Key? key,
+    super.key,
     required this.repositry,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -101,6 +100,7 @@ class RepoCard extends StatelessWidget {
               Row(
                 children: [
                   Expanded(
+                    flex: 2,
                     child: Row(
                       children: [
                         repositry.language == ""
@@ -176,7 +176,7 @@ class RepoCard extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8),
                         child: Text(
-                          "Last Pushed: ${AppDateUtils.formatDate(repositry.lastPushed.toString())}",
+                          "Updated: ${AppDateUtils.formatDate(repositry.lastPushed.toString())}",
                           style: const TextStyle(
                               fontWeight: FontWeight.w600, fontSize: 10),
                         ),

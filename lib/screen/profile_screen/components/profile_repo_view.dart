@@ -1,10 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:github_flutter/constants/enums.dart';
 import 'package:github_flutter/core/bloc/github_bloc/github_bloc.dart';
 import 'package:github_flutter/model/repositries.dart';
-
 import 'package:github_flutter/screen/profile_screen/components/repo_card.dart';
-import 'package:github_flutter/constants/enums.dart';
 import 'package:github_flutter/utils/responsive_size.dart';
 import 'package:github_flutter/widgets/card_image.dart';
 import 'package:github_flutter/widgets/fade_widget.dart';
@@ -17,12 +16,12 @@ class ProfileRepoView extends StatefulWidget {
   final String? username;
   final bool isFullPage;
   const ProfileRepoView({
-    Key? key,
+    super.key,
     required this.showProfile,
     this.showBackButton = false,
     this.username,
     this.isFullPage = false,
-  }) : super(key: key);
+  });
 
   @override
   State<ProfileRepoView> createState() => _ProfileRepoViewState();

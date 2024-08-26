@@ -13,11 +13,10 @@ class ActionUserListScreen extends StatefulWidget {
   final String? repoName;
 
   const ActionUserListScreen(
-      {Key? key,
+      {super.key,
       required this.username,
       required this.actionUserListType,
-      this.repoName})
-      : super(key: key);
+      this.repoName});
 
   @override
   State<ActionUserListScreen> createState() => _ActionUserListScreenState();
@@ -78,7 +77,9 @@ class _ActionUserListScreenState extends State<ActionUserListScreen> {
                         radius: 50,
                         imageUrl: githubBloc.usersList[i].imageUrl,
                       ),
-                      title: Text(githubBloc.usersList[i].username.toString()),
+                      title: Text(
+                        githubBloc.usersList[i].username.toString(),
+                      ),
                     ),
                 separatorBuilder: (context, i) => const Divider(),
                 itemCount: githubBloc.usersList.length);

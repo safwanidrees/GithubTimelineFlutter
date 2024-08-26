@@ -5,13 +5,13 @@ import 'package:github_flutter/screen/profile_screen/components/profile_top_view
 import 'package:github_flutter/utils/responsive_size.dart';
 
 class ProfileWebView extends StatelessWidget {
-  const ProfileWebView({Key? key}) : super(key: key);
+  const ProfileWebView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scrollbar(
-        isAlwaysShown: kIsWeb ? true : false,
+        thumbVisibility: kIsWeb ? true : false,
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.only(top: 20),

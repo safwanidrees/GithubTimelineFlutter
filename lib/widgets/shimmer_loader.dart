@@ -1,7 +1,6 @@
+import 'package:fade_shimmer/fade_shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:github_flutter/utils/responsive_size.dart';
-
-import 'package:fade_shimmer/fade_shimmer.dart';
 import 'package:github_flutter/utils/theme.dart';
 
 class ShimmerLoader extends StatelessWidget {
@@ -10,11 +9,10 @@ class ShimmerLoader extends StatelessWidget {
   final bool isUserList;
 
   const ShimmerLoader(
-      {Key? key,
+      {super.key,
       this.isList = true,
       this.showPadding = false,
-      this.isUserList = false})
-      : super(key: key);
+      this.isUserList = false});
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +57,7 @@ class ShimmerLoader extends StatelessWidget {
 }
 
 class ShimmerUserProfile extends StatelessWidget {
-  const ShimmerUserProfile({Key? key}) : super(key: key);
+  const ShimmerUserProfile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -99,9 +97,9 @@ class ShimmerUserProfile extends StatelessWidget {
             const SizedBox(
               height: 80,
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 ShimmerCard(
                   radius: 10,
                   height: 50,
@@ -131,7 +129,7 @@ class ShimmerUserProfile extends StatelessWidget {
 }
 
 class ShimmerRepoCard extends StatelessWidget {
-  const ShimmerRepoCard({Key? key}) : super(key: key);
+  const ShimmerRepoCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -148,8 +146,8 @@ class ShimmerRepoCard extends StatelessWidget {
                 height: 15,
                 width: ResponsiveSize.sizeWidth(context) * 0.3,
               ),
-              Row(
-                children: const [
+              const Row(
+                children: [
                   ShimmerCard(
                     radius: 10,
                     height: 30,
@@ -189,8 +187,8 @@ class ShimmerRepoCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                children: const [
+              const Row(
+                children: [
                   ShimmerCard(
                     radius: 5,
                     height: 20,
@@ -236,11 +234,11 @@ class ShimmerCard extends StatelessWidget {
   final double radius;
 
   const ShimmerCard({
-    Key? key,
+    super.key,
     required this.width,
     required this.height,
     required this.radius,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

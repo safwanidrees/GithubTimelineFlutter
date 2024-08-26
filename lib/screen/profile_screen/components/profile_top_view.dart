@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:github_flutter/constants/enums.dart';
-import 'package:provider/provider.dart';
-
 import 'package:github_flutter/core/bloc/github_bloc/github_bloc.dart';
 import 'package:github_flutter/core/bloc/theme_bloc/theme_bloc.dart';
 import 'package:github_flutter/model/user.dart';
@@ -11,9 +9,10 @@ import 'package:github_flutter/utils/app_date_utils.dart';
 import 'package:github_flutter/utils/theme.dart';
 import 'package:github_flutter/widgets/card_image.dart';
 import 'package:github_flutter/widgets/shimmer_loader.dart';
+import 'package:provider/provider.dart';
 
 class ProfileTopView extends StatelessWidget {
-  const ProfileTopView({Key? key}) : super(key: key);
+  const ProfileTopView({super.key});
 
   @override
   Widget build(BuildContext context) {

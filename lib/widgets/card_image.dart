@@ -10,14 +10,13 @@ class CardImage extends StatelessWidget {
   final BoxFit boxFit;
 
   const CardImage(
-      {Key? key,
+      {super.key,
       required this.imageUrl,
       required this.height,
       required this.width,
       this.shape = BoxShape.rectangle,
       this.boxFit = BoxFit.cover,
-      this.radius = 16})
-      : super(key: key);
+      this.radius = 16});
   @override
   Widget build(BuildContext context) {
     if (imageUrl == null || imageUrl == "") {

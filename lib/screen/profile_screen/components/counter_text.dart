@@ -5,11 +5,10 @@ class CouterText extends StatelessWidget {
   final int? counter;
   final String? text;
   const CouterText(
-      {Key? key,
+      {super.key,
       required this.counter,
       required this.text,
-      required this.onTap})
-      : super(key: key);
+      required this.onTap});
 
   @override
   Widget build(BuildContext context) {

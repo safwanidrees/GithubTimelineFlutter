@@ -1,23 +1,22 @@
 import 'dart:io';
-import 'dart:typed_data';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:github_flutter/constants/enums.dart';
+//Local imports
+import 'package:github_flutter/core/helper/file_saver_mobile.dart'
+    if (dart.library.html) 'package:github_flutter/core/helper/file_saver_web.dart';
 import 'package:github_flutter/core/networking/exception.dart';
 import 'package:github_flutter/core/repository/github_repository.dart';
 import 'package:github_flutter/model/repositries.dart';
 import 'package:github_flutter/model/user.dart';
-import 'package:github_flutter/constants/enums.dart';
 import 'package:github_flutter/utils/alert_message.dart';
 import 'package:github_flutter/widgets/loader_dialog.dart';
 import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart';
 import 'package:share_extend/share_extend.dart';
-//Local imports
-import 'package:github_flutter/core/helper/file_saver_mobile.dart'
-    if (dart.library.html) 'package:github_flutter/core/helper/file_saver_web.dart';
 
 class GithubBloc with ChangeNotifier {
   final Dio _dio = Dio();
@@ -82,9 +81,9 @@ class GithubBloc with ChangeNotifier {
   Future<void> getuserRepositriesList(String? username) async {
     try {
       setCurrentUserRepoListState(CurrentUserRepoListState.loading);
-      List<Repositries> _list = [];
-      _list = await _githubRepository.getuserRepositriesList(username);
-      _currentUserRepoList = _list;
+      List<Repositries> list = [];
+      list = await _githubRepository.getuserRepositriesList(username);
+      _currentUserRepoList = list;
       _currentUserRepoList!.sort((a, b) => b.stars!.compareTo(a.stars!));
       setCurrentUserRepoListState(CurrentUserRepoListState.loaded);
     } catch (e) {
@@ -102,9 +101,9 @@ class GithubBloc with ChangeNotifier {
   Future<void> getUserProfile(String? username) async {
     try {
       setCurrentUserState(CurrentUserState.loading);
-      User _user;
-      _user = await _githubRepository.getUserProfile(username);
-      _currentUser = _user;
+      User user;
+      user = await _githubRepository.getUserProfile(username);
+      _currentUser = user;
       setCurrentUserState(CurrentUserState.loaded);
     } catch (e) {
       if (e.toString().toLowerCase().contains("not found")) {
@@ -123,17 +122,17 @@ class GithubBloc with ChangeNotifier {
       {String? repoName}) async {
     try {
       setActionUserListState(ActionUserListState.loading);
-      List<User> _list = [];
+      List<User> list = [];
 
       if (actionUserListType == ActionUserListType.star ||
           actionUserListType == ActionUserListType.forks) {
-        _list = await _githubRepository.getRepoActionUserList(
+        list = await _githubRepository.getRepoActionUserList(
             username, actionUserListType, repoName);
-        _usersList = _list;
+        _usersList = list;
       } else {
-        _list = await _githubRepository.getActionUserList(
+        list = await _githubRepository.getActionUserList(
             username, actionUserListType);
-        _usersList = _list;
+        _usersList = list;
       }
 
       setActionUserListState(ActionUserListState.loaded);

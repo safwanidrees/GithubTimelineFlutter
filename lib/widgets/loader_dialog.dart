@@ -9,8 +9,8 @@ import 'package:provider/provider.dart';
 
 class LoaderDialog extends StatelessWidget {
   const LoaderDialog({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
@@ -23,7 +23,7 @@ class LoaderDialog extends StatelessWidget {
         width: 10,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
-          color: Theme.of(context).backgroundColor,
+          color: Theme.of(context).colorScheme.background,
         ),
         padding: const EdgeInsets.only(top: 20, bottom: 20),
         child: Column(

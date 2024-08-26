@@ -46,19 +46,19 @@ mixin JsonParser {
   }
 
   static List<String> toStringList(List<dynamic> data) {
-    final _data = data;
+    final data0 = data;
 
-    return _data.map((item) => item.toString()).toList();
+    return data0.map((item) => item.toString()).toList();
   }
 
   static List<int> toIntList(List<dynamic> data) {
-    final _data = data;
-    return _data.map((item) => (toIntOrZero(item))).toList();
+    final data0 = data;
+    return data0.map((item) => (toIntOrZero(item))).toList();
   }
 
   static List<int> toDoubleList(List<dynamic> data) {
-    final _data = data;
-    return _data.map((item) => (toIntOrZero(item))).toList();
+    final data0 = data;
+    return data0.map((item) => (toIntOrZero(item))).toList();
   }
 
   static dynamic toEnumOrNull(data, List<dynamic> enumValues) {

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:github_flutter/utils/responsive_size.dart';
 import 'package:github_flutter/utils/theme.dart';
 
@@ -28,7 +27,7 @@ class CustomTextFiled extends StatefulWidget {
   final bool isDense;
   final double? width;
   const CustomTextFiled(
-      {Key? key,
+      {super.key,
       this.hintText = '',
       this.controller,
       this.hideText = false,
@@ -51,8 +50,7 @@ class CustomTextFiled extends StatefulWidget {
       this.isDense = false,
       this.fillColor = AppTheme.white,
       this.textColor = AppTheme.secondaryColor,
-      this.width})
-      : super(key: key);
+      this.width});
 
   @override
   _CustomTextFiledState createState() => _CustomTextFiledState();

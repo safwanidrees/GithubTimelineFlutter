@@ -45,7 +45,6 @@ class AppTheme {
 
     return ThemeData(
       scaffoldBackgroundColor: isDarkTheme ? secondaryColor : primaryColor,
-      primarySwatch: isDarkTheme ? primarywhite : primaryblack,
       visualDensity: VisualDensity.adaptivePlatformDensity,
       fontFamily: "Lato",
       floatingActionButtonTheme: FloatingActionButtonThemeData(
@@ -62,17 +61,41 @@ class AppTheme {
               fontSize: 16,
               fontWeight: FontWeight.bold)),
       primaryColor: isDarkTheme ? secondaryColor : primaryColor,
-      backgroundColor: isDarkTheme ? secondaryColor : const Color(0xffF1F5FB),
       disabledColor: Colors.grey,
       textSelectionTheme: TextSelectionThemeData(
           selectionColor: isDarkTheme ? primaryColor : secondaryColor),
       cardColor: isDarkTheme ? primaryColor : secondaryColor,
       canvasColor: isDarkTheme ? secondaryColor : Colors.grey[50],
-      brightness: isDarkTheme ? Brightness.dark : Brightness.light,
       buttonTheme: Theme.of(context).buttonTheme.copyWith(
           colorScheme: isDarkTheme
               ? const ColorScheme.dark()
               : const ColorScheme.light()),
+      textTheme: TextTheme(
+        bodyMedium: TextStyle(
+          color: isDarkTheme ? primaryColor : secondaryColor,
+        ),
+      ),
+      iconButtonTheme: IconButtonThemeData(
+        style: ButtonStyle(
+          iconColor: MaterialStateProperty.all<Color>(
+              isDarkTheme ? primaryColor : secondaryColor),
+        ),
+      ),
+      dividerTheme: DividerThemeData(
+          color: isDarkTheme ? Colors.grey[700] : Colors.grey[300]),
+      dividerColor: isDarkTheme ? Colors.grey[700] : Colors.grey[300],
+      listTileTheme: ListTileTheme.of(context).copyWith(
+        titleTextStyle:
+            TextStyle(color: isDarkTheme ? primaryColor : secondaryColor),
+
+        // tileColor: isDarkTheme ? primaryColor : secondaryColor,
+      ),
+      colorScheme: ColorScheme.fromSwatch(
+              primarySwatch: isDarkTheme ? primarywhite : primaryblack)
+          .copyWith(
+              brightness: isDarkTheme ? Brightness.dark : Brightness.light,
+              background:
+                  isDarkTheme ? secondaryColor : const Color(0xffF1F5FB)),
     );
   }
 }

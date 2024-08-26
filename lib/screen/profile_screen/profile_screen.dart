@@ -2,7 +2,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:github_flutter/constants/enums.dart';
 import 'package:github_flutter/core/bloc/github_bloc/github_bloc.dart';
-
 import 'package:github_flutter/screen/profile_screen/components/profile_mobile_view.dart';
 import 'package:github_flutter/screen/profile_screen/components/profile_webview.dart';
 import 'package:provider/provider.dart';
@@ -10,9 +9,9 @@ import 'package:provider/provider.dart';
 class ProfileScreen extends StatefulWidget {
   final String username;
   const ProfileScreen({
-    Key? key,
+    super.key,
     required this.username,
-  }) : super(key: key);
+  });
 
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
